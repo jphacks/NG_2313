@@ -46,7 +46,7 @@ const Documents: React.FunctionComponent = () => {
     <React.Fragment>
       <div className="relative flex h-full flex-col">
         <h2 className="text-center underline">Chat</h2>
-        <div className="mb mt-5 flex flex-auto flex-col overflow-auto text-lg">
+        <div className="mt-5 flex flex-auto flex-col overflow-auto pb-16 text-lg">
           {messages.map(({ speaker, text }: Message, i) => (
             <p key={i}>
               {speaker} : {text}
