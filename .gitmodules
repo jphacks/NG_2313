@@ -1,0 +1,3 @@
+[submodule "NG_2313_1"]
+	path = NG_2313_1
+	url = git@github.com:jphacks/NG_2313_1.git
