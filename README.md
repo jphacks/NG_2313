@@ -1,40 +1,48 @@
-# サンプル（プロダクト名）
+# LLM personal assistant
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2023/07/JPHACKS2023_ogp.png)](https://www.youtube.com/watch?v=yYRQEdfGjEg)
+## Usage
 
-## 製品概要
-### 背景(製品開発のきっかけ、課題等）
-### 製品説明（具体的な製品の説明）
-### 特長
-#### 1. 特長1
-#### 2. 特長2
-#### 3. 特長3
+### Prerequisites
 
-### 解決出来ること
-### 今後の展望
-### 注力したこと（こだわり等）
-* 
-* 
+- Node.js
+- npm
+- Code Editor (VSCode is recommended)
 
-## 開発技術
-### 活用した技術
-#### API・データ
-* 
-* 
+### Editor Setting for VSCode (Optional)
 
-#### フレームワーク・ライブラリ・モジュール
-* 
-* 
+#### Install extensions
 
-#### デバイス
-* 
-* 
+- VS Code ES7 React/Redux/React-Native/JS snippets
+- Prettier - Code formatter
+- ESlint
+- Tailwind CSS IntelliSense
 
-### 独自技術
-#### ハッカソンで開発した独自機能・技術
-* 独自で開発したものの内容をこちらに記載してください
-* 特に力を入れた部分をファイルリンク、またはcommit_idを記載してください。
+#### Formatter setting
 
-#### 製品に取り入れた研究内容（データ・ソフトウェアなど）（※アカデミック部門の場合のみ提出必須）
-* 
-* 
+1. Open 'User Setting'
+1. Type 'formatter' in the search bar and select Prettier on the 'Editor:Default Formatter' tab.
+1. Type 'format on save' in the search bar and check the box.
+
+### Install Dependencies
+
+```
+npm install
+```
+
+### Run
+
+```
+# development mode
+$ npm run dev
+
+# production build
+$ npm run build
+```
+
+## Technologies used
+
+- Next.js
+- Electron
+- Tailwind
+- Eslint
+- Prettier
