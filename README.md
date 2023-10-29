@@ -53,7 +53,7 @@ npm install
 
 ### Prepare Backend
 Visit this link and setup the backend server with a different process.
-https://github.com/jphacks/NG_2313_1/tree/178a1d8058093bff3acaf92ad64de3620042ae26
+[https://github.com/jphacks/NG_2313_1/tree/178a1d8058093bff3acaf92ad64de3620042ae26](https://github.com/jphacks/NG_2313_1/tree/main)
 
 ### Run
 
