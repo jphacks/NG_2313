@@ -7,8 +7,8 @@ Using OpenAI API and LangChain, AI will answer your questions using documents st
 One point of differentiation from ChatGPT is that it can read the documents in the user's local environment, read all the documents in the directory, and answer questions about those documents. 
 In addition, we are aiming to develop a chat system that can be more deeply personalized for each individual, based on user information with long-term memory among multiple sessions.
 
-**Now, it only can read the documents under "pdf" directries in the backend repository. So, you have to set in the "pdf" repository or upload documents you'd like to let it read.
-In addition, you have to say "pdf" at the beggining of the question to ask about the documents like in the fig.(2023/10/29)**
+**Now(2023/10/29), it only can read the documents under "pdf" directries in the backend repository. So, you have to set in the "pdf" repository or upload documents you'd like to let it read.
+In addition, you have to say "pdf" at the beggining of the question to ask about the documents. (like in the fig.)**
 
 ## Status
 ### Current Status (2023/10/29)
