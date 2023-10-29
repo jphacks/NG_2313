@@ -44,6 +44,27 @@ export const sendQuestion = async (question: string): Promise<QuestionResp> => {
     message: question,
   };
 
+  const resp = await fetch(`${baseUrl}/question`, {
+    method: "PUT",
+    body: JSON.stringify(body),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  validateResp(resp);
+
+  const respBody = await resp.text();
+  return JSON.parse(respBody);
+};
+
+export const sendConversation = async (
+  message: string,
+): Promise<QuestionResp> => {
+  const body = {
+    message,
+  };
+
   const resp = await fetch(`${baseUrl}/conversation`, {
     method: "PUT",
     body: JSON.stringify(body),

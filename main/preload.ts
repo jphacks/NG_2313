@@ -18,8 +18,10 @@ const handler = {
     return docs;
   },
   pdf: async (documents: Document[]) => ipcRenderer.invoke("pdf", documents),
-  question: async (question: string): Promise<QuestionResp> =>
-    ipcRenderer.invoke("question", question),
+  conversation: async (message: string): Promise<QuestionResp> =>
+    ipcRenderer.invoke("conversation", message),
+  question: async (q: string): Promise<QuestionResp> =>
+    ipcRenderer.invoke("question", q),
 };
 
 contextBridge.exposeInMainWorld("ipc", handler);

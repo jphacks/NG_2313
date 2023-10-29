@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { ipcMain } from "electron";
 
 import { Document } from "../../renderer/src/types/document";
-import { QuestionResp, sendPdf, sendQuestion } from "./api";
+import { QuestionResp, sendConversation, sendPdf, sendQuestion } from "./api";
 
 const pdfDir = "./pdf";
 
@@ -31,6 +31,12 @@ export const setIpcHandler = (): void => {
       await sendPdf(d.data);
     }
   });
+
+  ipcMain.handle(
+    "conversation",
+    async (_, message: string): Promise<QuestionResp> =>
+      sendConversation(message),
+  );
 
   ipcMain.handle(
     "question",
