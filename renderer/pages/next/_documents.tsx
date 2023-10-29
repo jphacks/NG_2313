@@ -6,7 +6,7 @@ import type { Document } from "../../src/types/document";
 
 const Documents: React.FunctionComponent = () => {
   const [documents, setDocuments] = useState<Document[]>([]);
-  const [uploading, setUploading] = useState<boolean>(true);
+  const [uploading, setUploading] = useState<boolean>(false);
 
   useEffect(() => {
     void (async () => {
@@ -31,12 +31,15 @@ const Documents: React.FunctionComponent = () => {
       files.push(file);
     }
 
-    void (async () => {
-      const docs = await window.ipc.saveFiles(files);
-      await window.ipc.pdf(docs);
-      setDocuments((prev) => [...prev, ...docs]);
+    try {
+      void (async () => {
+        const docs = await window.ipc.saveFiles(files);
+        await window.ipc.pdf(docs);
+        setDocuments((prev) => [...prev, ...docs]);
+      })();
+    } finally {
       setUploading(false);
-    })();
+    }
   };
 
   return (

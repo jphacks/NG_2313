@@ -20,7 +20,6 @@ const validateResp = (resp: Response) => {
 
 export const sendPdf = async (data: ArrayBuffer) => {
   const body = {
-    collection_name: collection,
     pdf: arrayBufferToBase64(data),
   };
 
