@@ -42,11 +42,10 @@ export type QuestionResp = {
 
 export const sendQuestion = async (question: string): Promise<QuestionResp> => {
   const body = {
-    collection_name: collection,
-    question,
+    message: question,
   };
 
-  const resp = await fetch(`${baseUrl}/question`, {
+  const resp = await fetch(`${baseUrl}/conversation`, {
     method: "PUT",
     body: JSON.stringify(body),
     headers: {
