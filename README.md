@@ -4,6 +4,8 @@ Using OpenAI API and LangChain, AI will answer your questions using documents st
 
 ![image](https://github.com/jphacks/NG_2313/assets/50434558/45e9c58c-ce1d-406b-bf87-2e32600f40bd)
 
+One point of differentiation from Chat GPT is that it can specify a directory in the user's local environment, read all the documents in that directory, and answer questions about those documents. In addition, we are aiming to develop a chat system that can be more deeply personalized for each individual, based on user information.
+
 ## Status
 ### Current Status (2023/10/29)
 Now, it has two functions.
