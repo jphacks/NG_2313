@@ -1,4 +1,19 @@
-# LLM personal assistant
+# T.H.U.R.S.D.A.Y.
+This is **T**ext en**H**anced **U**ser suppo**R**t **S**ystem day by **DAY**, a desktop chat application to support your daily work. 
+Using OpenAI API and LangChain, AI will answer your questions using documents stored in the user's local environment and web searches.
+
+![image](https://github.com/jphacks/NG_2313/assets/50434558/45e9c58c-ce1d-406b-bf87-2e32600f40bd)
+
+## Status
+### Current Status (2023/10/29)
+Now, it has two functions.
+
+1. To answer the given question about a document, which starts with word "pdf", that the user uploaded.
+2. To answer the given quesiotn searching web.
+
+### Future Works
+1. Enable it to read texts sotred in local repositories.
+1. Enable it to extract user information and personalize to the each user.
 
 ## Usage
 
@@ -28,6 +43,10 @@
 ```
 npm install
 ```
+
+### Prepare Backend
+Visit this link and setup the backend server with a different process.
+https://github.com/jphacks/NG_2313_1/tree/178a1d8058093bff3acaf92ad64de3620042ae26
 
 ### Run
 
