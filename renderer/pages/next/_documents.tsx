@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import { FaFilePdf } from "react-icons/fa";
 import type { Document } from "../../src/types/document";
 
 const Documents: React.FunctionComponent = () => {
@@ -34,16 +35,39 @@ const Documents: React.FunctionComponent = () => {
     })();
   };
 
+  const maxFileNameLen = 40;
+  const fmtFileName = (name: string): string => {
+    return name.length < maxFileNameLen
+      ? name
+      : `${name.substring(0, maxFileNameLen)}...`;
+  };
+
   return (
     <React.Fragment>
-      <h2 className="text-center underline">Documents</h2>
-      <div className="text-xs">
-        <input type="file" accept=".pdf" onChange={onFileChange} multiple />
-        <div>
-          {documents.map((d) => (
-            <p key={d.name}>{d.name}</p>
-          ))}
-        </div>
+      <div className="mx-auto">
+        <input
+          id="pdf"
+          className="hover:file:bg-primary-700 file:bold block w-full text-sm file:mr-2 file:rounded-md file:border-0 file:bg-blue-500 file:px-4 file:py-2.5 file:text-sm file:text-white focus:outline-none"
+          type="file"
+          accept=".pdf"
+          onChange={onFileChange}
+          multiple
+        />
+      </div>
+      <div className="my-4 w-full text-lg">
+        {documents.map((d) => (
+          <button
+            key={d.name}
+            className="mt-1 block w-full rounded-md p-1 hover:bg-gray-500"
+          >
+            <div className="flex items-center">
+              <FaFilePdf size={20} />
+              <p className="mx-1 max-w-full overflow-hidden whitespace-nowrap">
+                {d.name}
+              </p>
+            </div>
+          </button>
+        ))}
       </div>
     </React.Fragment>
   );

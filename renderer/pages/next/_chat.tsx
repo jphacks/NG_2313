@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React, { useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaUserCircle } from "react-icons/fa";
 
 import { sendMessage } from "../../src/services/chatService";
 
@@ -10,16 +11,7 @@ interface Message {
 
 const Documents: React.FunctionComponent = () => {
   const [input, setInput] = useState<string>("");
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      speaker: "Assistant",
-      text: "こんにちは。あなたのパーソナルアシスタントです。",
-    },
-    {
-      speaker: "Assistant",
-      text: "何なりとお申し付けください。",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
   const send = (): void => {
     if (input === "") return;
@@ -45,12 +37,23 @@ const Documents: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <div className="relative flex h-full flex-col">
-        <h2 className="text-center underline">Chat</h2>
-        <div className="mt-5 flex flex-auto flex-col overflow-auto pb-16 text-lg">
-          {messages.map(({ speaker, text }: Message, i) => (
-            <p key={i}>
-              {speaker} : {text}
-            </p>
+        <div className="flex flex-auto flex-col overflow-auto pb-16 text-lg">
+          {messages.map(({ speaker, text }, i) => (
+            <div key={i} className="mt-1 flex">
+              <div className="flex-none">
+                {speaker === "Assistant" ? (
+                  <Image
+                    src="/images/logo.png"
+                    alt="Assistant"
+                    width={40}
+                    height={40}
+                  />
+                ) : (
+                  <FaUserCircle size={37} />
+                )}
+              </div>
+              <p className="ml-1 flex items-center	">{text}</p>
+            </div>
           ))}
         </div>
         <div className="absolute bottom-2 w-full pl-2 pr-7 text-lg">
