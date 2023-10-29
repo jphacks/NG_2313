@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import { FaFilePdf } from "react-icons/fa";
+import { Rings } from "react-loading-icons";
 import type { Document } from "../../src/types/document";
 
 const Documents: React.FunctionComponent = () => {
   const [documents, setDocuments] = useState<Document[]>([]);
+  const [uploading, setUploading] = useState<boolean>(true);
 
   useEffect(() => {
     void (async () => {
@@ -16,6 +18,7 @@ const Documents: React.FunctionComponent = () => {
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     if (event.target.files === null || event.target.files.length < 1) return;
 
+    setUploading(true);
     const files: File[] = [];
 
     const filenames = documents.map((v) => v.name);
@@ -32,27 +35,22 @@ const Documents: React.FunctionComponent = () => {
       const docs = await window.ipc.saveFiles(files);
       await window.ipc.pdf(docs);
       setDocuments((prev) => [...prev, ...docs]);
+      setUploading(false);
     })();
-  };
-
-  const maxFileNameLen = 40;
-  const fmtFileName = (name: string): string => {
-    return name.length < maxFileNameLen
-      ? name
-      : `${name.substring(0, maxFileNameLen)}...`;
   };
 
   return (
     <React.Fragment>
-      <div className="mx-auto">
+      <div className="mx-auto flex items-center">
         <input
           id="pdf"
-          className="hover:file:bg-primary-700 file:bold block w-full text-sm file:mr-2 file:rounded-md file:border-0 file:bg-blue-500 file:px-4 file:py-2.5 file:text-sm file:text-white focus:outline-none"
+          className="hover:file:bg-primary-700 file:bold w-56 text-sm file:mr-2 file:rounded-md file:border-0 file:bg-blue-500 file:px-4 file:py-2.5 file:text-sm file:text-white focus:outline-none"
           type="file"
           accept=".pdf"
           onChange={onFileChange}
           multiple
         />
+        {uploading && <Rings width={50} height={50} />}
       </div>
       <div className="my-4 w-full text-lg">
         {documents.map((d) => (

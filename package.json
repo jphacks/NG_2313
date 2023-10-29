@@ -12,6 +12,7 @@
   "dependencies": {
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
+    "react-loading-icons": "^1.1.0",
     "react-pdf": "^7.5.1",
     "tesseract.js": "^5.0.2"
   },
