@@ -5,7 +5,7 @@ import { ipcMain } from "electron";
 import { Document } from "../../renderer/src/types/document";
 import { QuestionResp, sendConversation, sendPdf, sendQuestion } from "./api";
 
-const pdfDir = "./pdf";
+const pdfDir = "./NG_2313_1/pdf";
 
 export const setIpcHandler = (): void => {
   ipcMain.handle("loadFiles", (): Document[] => {
