@@ -14,8 +14,9 @@ Now, it has two functions.
 2. To answer the given quesiotn searching web.
 
 ### Future Works
-1. Enable it to read texts sotred in local repositories.
-1. Enable it to extract user information and personalize to the each user.
+1. Enable it to read texts sotred in any local repositories.
+2. Enable it to read any kinds of documents such as .doc, .ppt, .md etc. 
+3. Enable it to extract user information and personalize to the each user.
 
 ## Usage
 
