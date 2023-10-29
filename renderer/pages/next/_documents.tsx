@@ -61,7 +61,9 @@ const Documents: React.FunctionComponent = () => {
             className="mt-1 block w-full rounded-md p-1 hover:bg-gray-500"
           >
             <div className="flex items-center">
-              <FaFilePdf size={20} />
+              <div className="flex-none">
+                <FaFilePdf size={20} />
+              </div>
               <p className="mx-1 max-w-full overflow-hidden whitespace-nowrap">
                 {d.name}
               </p>
