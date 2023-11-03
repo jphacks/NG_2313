@@ -1,3 +1,7 @@
+**このアプリの開発は[こちら](https://github.com/kenkenpa2126/THURSDAY/tree/main)のリポジトリに移行しました。**
+
+
+
 # T.H.U.R.S.D.A.Y.
 This is **T**ext en**H**anced **U**ser suppo**R**t **S**ystem day by **DAY**, a desktop chat application to support your daily work. 
 Using OpenAI API and LangChain, AI will answer your questions using documents stored in the user's local environment and web searches.
