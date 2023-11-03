@@ -1,4 +1,5 @@
 **このアプリの開発は[こちら](https://github.com/kenkenpa2126/THURSDAY/tree/main)のリポジトリに移行しました。**
+**The development of this application has been moved to the repository [here](https://github.com/kenkenpa2126/THURSDAY/tree/main). **
 
 
 
